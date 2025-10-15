@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- New Palette: Deep Blue & Teal -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FDFBF6;
-            color: #3C3C3C;
+            background-color: #F0F4F8; /* Light cool gray */
+            color: #1A365D; /* Deep navy blue */
         }
         .kpi-card {
             background-color: #FFFFFF;
@@ -29,18 +30,18 @@
             transition: color 0.2s;
         }
         .nav-link:hover {
-            color: #C0A080;
+            color: #008080; /* Teal */
         }
         .active-tab {
-            border-bottom: 2px solid #C0A080;
-            color: #C0A080;
+            border-bottom: 2px solid #008080; /* Teal */
+            color: #008080; /* Teal */
             font-weight: 600;
         }
         .tab {
             cursor: pointer;
         }
         .detail-row {
-            background-color: #F8F6F2;
+            background-color: #E6EEF5;
         }
         .chart-container {
             position: relative;
@@ -64,7 +65,7 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-[#3C3C3C]">Zlatni Juli <span class="font-light text-[#C0A080]">| Performance Report</span></h1>
+                    <h1 class="text-xl font-bold text-[#1A365D]">Zlatni Juli <span class="font-light text-[#008080]">| Performance Report</span></h1>
                 </div>
                 <nav class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -89,7 +90,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <div class="kpi-card p-6">
                     <h3 class="text-sm font-medium text-gray-500">Operating Revenue</h3>
-                    <p class="mt-1 text-3xl font-semibold text-[#3C3C3C]">KD 414</p>
+                    <p class="mt-1 text-3xl font-semibold text-[#1A365D]">KD 414</p>
                     <p class="mt-1 text-sm text-gray-500">vs KD 337 in July</p>
                 </div>
                 <div class="kpi-card p-6">
@@ -126,7 +127,7 @@
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <div class="flex justify-center items-center mb-4 space-x-2">
                     <span class="font-medium">Select Year:</span>
-                    <button id="btn2025" class="px-4 py-2 text-sm font-semibold rounded-md bg-[#C0A080] text-white">2025</button>
+                    <button id="btn2025" class="px-4 py-2 text-sm font-semibold rounded-md bg-[#008080] text-white">2025</button>
                     <button id="btn2024" class="px-4 py-2 text-sm font-semibold rounded-md bg-gray-200 text-gray-700">2024</button>
                 </div>
                 <p id="trends-context" class="text-center text-gray-600 mb-6">This chart tracks key financial metrics month-over-month. The bars represent operating revenue, while the lines show total costs and the resulting net profit or loss. Use the buttons above to toggle between 2025 and 2024 data to compare performance across years.</p>
@@ -292,15 +293,15 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2 text-[#C0A080]">1. Accelerate Revenue Growth</h3>
+                    <h3 class="text-lg font-semibold mb-2 text-[#008080]">1. Accelerate Revenue Growth</h3>
                     <p>The modest revenue increase is a positive sign. The focus must be to build on this momentum. Implement targeted marketing campaigns, introduce special offers, and explore partnerships with local businesses or delivery platforms to significantly boost daily sales.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2 text-[#C0A080]">2. Optimize Operating Costs</h3>
+                    <h3 class="text-lg font-semibold mb-2 text-[#008080]">2. Optimize Operating Costs</h3>
                     <p>While the gross margin is high, a detailed review of food and packaging costs is warranted to ensure maximum efficiency. Small, consistent savings in operating costs can have a significant impact on the bottom line as sales volume increases.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-lg font-semibold mb-2 text-[#C0A080]">3. Address High Fixed Costs</h3>
+                    <h3 class="text-lg font-semibold mb-2 text-[#008080]">3. Address High Fixed Costs</h3>
                     <p>Rent remains the single largest expense. The primary path to profitability is to generate enough revenue to cover this and other fixed costs. As a long-term strategy, evaluate the cost-benefit of the current location and explore potential alternatives if profitability targets are not met.</p>
                 </div>
             </div>
@@ -346,7 +347,7 @@
                     labels: ['Operating Cost', 'G&A Expenses', 'Net Loss'],
                     datasets: [{
                         data: [data.opCost, data.gaCost, Math.abs(data.netLoss)],
-                        backgroundColor: ['#6EE7B7', '#FBBF24', '#F87171'],
+                        backgroundColor: ['#4FD1C5', '#F59E0B', '#EF4444'], // Teal, Amber, Red
                         borderColor: '#FFFFFF',
                         borderWidth: 4,
                         hoverOffset: 8
@@ -400,14 +401,14 @@
                         {
                             label: 'Operating Revenue',
                             data: data.revenue,
-                            backgroundColor: '#C0A080',
+                            backgroundColor: '#008080', // Teal
                             order: 2
                         },
                         {
                             label: 'Total Costs (Op + G&A)',
                             data: data.totalCost,
-                            borderColor: '#FBBF24',
-                            backgroundColor: '#FBBF24',
+                            borderColor: '#F59E0B', // Amber
+                            backgroundColor: '#F59E0B',
                             type: 'line',
                             fill: false,
                             tension: 0.1,
@@ -416,8 +417,8 @@
                         {
                             label: 'Net Profit / (Loss)',
                             data: data.netProfit,
-                            borderColor: '#F87171',
-                            backgroundColor: '#F87171',
+                            borderColor: '#EF4444', // Red
+                            backgroundColor: '#EF4444',
                             type: 'line',
                             fill: false,
                             tension: 0.1,
@@ -495,22 +496,21 @@
 
             btn2025.addEventListener('click', () => {
                 createOrUpdateMonthlyTrendsChart(2025);
-                btn2025.classList.add('bg-[#C0A080]', 'text-white');
+                btn2025.classList.add('bg-[#008080]', 'text-white');
                 btn2025.classList.remove('bg-gray-200', 'text-gray-700');
                 btn2024.classList.add('bg-gray-200', 'text-gray-700');
-                btn2024.classList.remove('bg-[#C0A080]', 'text-white');
+                btn2024.classList.remove('bg-[#008080]', 'text-white');
             });
 
             btn2024.addEventListener('click', () => {
                 createOrUpdateMonthlyTrendsChart(2024);
-                btn2024.classList.add('bg-[#C0A080]', 'text-white');
+                btn2024.classList.add('bg-[#008080]', 'text-white');
                 btn2024.classList.remove('bg-gray-200', 'text-gray-700');
                 btn2025.classList.add('bg-gray-200', 'text-gray-700');
-                btn2025.classList.remove('bg-[#C0A080]', 'text-white');
+                btn2025.classList.remove('bg-[#008080]', 'text-white');
             });
         });
     </script>
 </body>
 </html>
-
 
